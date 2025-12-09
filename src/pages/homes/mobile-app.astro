@@ -13,7 +13,8 @@ import Stats from '~/components/widgets/Stats.astro';
 
 import Button from '~/components/ui/Button.astro';
 import Image from '~/components/common/Image.astro';
-
+import UnderConstruction from '../components/UnderConstruction.astro';
+import Layout from '../layouts/Layout.astro';
 const appStoreImg = '~/assets/images/app-store.png';
 const appStoreDownloadLink = 'https://github.com/arthelokyo/astrowind';
 
@@ -26,6 +27,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+<UnderConstruction />
   <Fragment slot="announcement"></Fragment>
   <Fragment slot="header">
     <Header
