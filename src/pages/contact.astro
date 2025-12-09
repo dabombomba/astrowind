@@ -3,13 +3,15 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-
+import UnderConstruction from '../components/UnderConstruction.astro';
+import Layout from '../layouts/Layout.astro';
 const metadata = {
   title: 'Contact',
 };
 ---
 
 <Layout metadata={metadata}>
+<UnderConstruction />
   <!-- HeroText Widget ******************* -->
 
   <HeroText tagline="Contact" title="Are you sure?" />
