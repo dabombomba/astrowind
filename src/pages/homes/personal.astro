@@ -10,13 +10,15 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import { getPermalink } from '~/utils/permalinks';
-
+import UnderConstruction from '../components/UnderConstruction.astro';
+import Layout from '../layouts/Layout.astro';
 const metadata = {
   title: 'Personal Homepage Demo',
 };
 ---
 
 <Layout metadata={metadata}>
+<UnderConstruction />
   <Fragment slot="announcement"></Fragment>
   <Fragment slot="header">
     <Header
