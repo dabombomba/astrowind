@@ -1,0 +1,74 @@
+---
+---
+<div
+  id="under-construction-overlay"
+  class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Under Construction Overlay"
+>
+  <div class="mx-4 w-full max-w-2xl rounded-lg bg-white/95 p-6 text-center shadow-lg dark:bg-slate-900/90">
+    <h1 class="text-2xl font-extrabold text-slate-900 dark:text-white">Under Construction</h1>
+
+    <p class="mt-3 text-sm text-slate-700 dark:text-slate-300">
+      This template is currently being updated. The timer below shows how long it's been since
+      December 8, 2025 22:00 (UTC).
+    </p>
+
+    <div class="mt-6 flex flex-col items-center gap-2">
+      <div class="rounded-md bg-slate-50 px-4 py-2 text-lg font-medium text-slate-900 dark:bg-slate-800 dark:text-white">
+        Running time: <span id="uc-timer" aria-live="polite">0d 0h 0m 0s</span>
+      </div>
+
+      <div class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+        Current date: <span id="uc-current-date" aria-live="polite">—</span>
+      </div>
+    </div>
+
+    <p class="mt-4 text-xs text-slate-500 dark:text-slate-400">
+      Remove this overlay when templates are updated.
+    </p>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const runtimeStart = new Date(Date.UTC(2025, 11, 8, 22, 0, 0));
+    const timerEl = document.getElementById('uc-timer');
+    const currentDateEl = document.getElementById('uc-current-date');
+
+    function pad(n) {
+      return String(n).padStart(2, '0');
+    }
+
+    function formatElapsed(ms) {
+      if (ms < 0) ms = 0;
+      const totalSeconds = Math.floor(ms / 1000);
+      const days = Math.floor(totalSeconds / (24 * 3600));
+      const hours = Math.floor((totalSeconds % (24 * 3600)) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+      return `${days}d ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
+    }
+
+    function update() {
+      const now = new Date();
+      const elapsedMs = now - runtimeStart;
+      if (timerEl) timerEl.textContent = formatElapsed(elapsedMs);
+      if (currentDateEl) currentDateEl.textContent = now.toLocaleString();
+    }
+
+    update();
+    setInterval(update, 1000);
+  })();
+</script>
+
+<noscript>
+  <div class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60">
+    <div class="mx-4 max-w-2xl rounded-lg bg-white p-6 text-center shadow-lg">
+      <h1 class="text-lg font-bold">Under Construction</h1>
+      <p class="mt-2 text-sm">JavaScript is required to show a live timer. Current date will be shown by your browser when JS is enabled.</p>
+      <p class="mt-3 text-xs text-slate-500">Remove this overlay when templates are updated.</p>
+    </div>
+  </div>
+</noscript>
