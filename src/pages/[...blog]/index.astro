@@ -12,7 +12,8 @@ import { getStaticPathsBlogPost, blogPostRobots } from '~/utils/blog';
 import { findImage } from '~/utils/images';
 import type { MetaData } from '~/types';
 import RelatedPosts from '~/components/blog/RelatedPosts.astro';
-
+import UnderConstruction from '../components/UnderConstruction.astro';
+import Layout from '../layouts/Layout.astro';
 export const prerender = true;
 
 export const getStaticPaths = (async () => {
@@ -46,6 +47,7 @@ const metadata = merge(
 ---
 
 <Layout metadata={metadata}>
+<UnderConstruction />
   <SinglePost post={{ ...post, image: image }} url={url}>
     {post.Content ? <post.Content /> : <Fragment set:html={post.content || ''} />}
   </SinglePost>
