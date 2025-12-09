@@ -6,7 +6,8 @@ import Layout from '~/layouts/PageLayout.astro';
 import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
-
+import UnderConstruction from '../components/UnderConstruction.astro';
+import Layout from '../layouts/Layout.astro';
 export const prerender = true;
 
 export const getStaticPaths = (async ({ paginate }) => {
@@ -29,6 +30,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+<UnderConstruction />
   <section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
     <Headline>Tag: {tag.title}</Headline>
     <BlogList posts={page.data} />
