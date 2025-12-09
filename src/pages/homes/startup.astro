@@ -10,7 +10,8 @@ import Stats from '~/components/widgets/Stats.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Brands from '~/components/widgets/Brands.astro';
-
+import UnderConstruction from '../components/UnderConstruction.astro';
+import Layout from '../layouts/Layout.astro';
 import { YouTube } from 'astro-embed';
 
 const metadata = {
@@ -19,6 +20,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+<UnderConstruction />
   <!-- Hero Widget ******************* -->
 
   <Hero
