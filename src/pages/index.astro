@@ -1,4 +1,9 @@
 ---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Site Not Open"><section class="flex flex-col items-center justify-center min-h-screen text-center"><h1 class="text-4xl font-bold">🚧 Site Not Open 🚧</h1><p class="mt-4 text-lg">We’re preparing for rollout. Please check back soon!</p><p class="mt-6 text-xl text-gray-700">Time since December 8, 2025 22:00:<span id="timer" class="font-mono text-blue-600"></span></p></section><script>const s=new Date("December 8, 2025 22:00:00").getTime(),t=document.getElementById("timer");function u(){const n=new Date().getTime()-s,e=Math.floor(n/86400000),o=Math.floor(n/3600000%24),r=Math.floor(n/60000%60),c=Math.floor(n/1000%60);t.textContent=`${e}d ${o}h ${r}m ${c}s`}setInterval(u,1000),u();</script></Layout>
+
+/*
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
@@ -11,13 +16,13 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-
+*/
 const metadata = {
   title: 'dabombomba — make boom set:good',
   ignoreTitleTemplate: true,
 };
 ---
-
+/*
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
@@ -390,3 +395,5 @@ const metadata = {
     </Fragment>
   </CallToAction>
 </Layout>
+*/
+--->
