@@ -11,13 +11,15 @@ import Pricing from '~/components/widgets/Pricing.astro';
 import { headerData } from '~/navigation';
 import FAQs from '~/components/widgets/FAQs.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-
+import UnderConstruction from '../components/UnderConstruction.astro';
+import Layout from '../layouts/Layout.astro';
 const metadata = {
   title: 'SaaS Landing Page',
 };
 ---
 
 <Layout metadata={metadata}>
+<UnderConstruction />
   <Fragment slot="header">
     <Header
       {...headerData}
